@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="item" placeholder="Enter a grocery item">
+      <button type="button" onclick="addItem()">Add Item</button>
+      <br>
+      <button type="button" onclick="sortList()">Sort List</button>
+      <br>
+      <p>Grocery List:</p>
+      <ul id="grocery-list"></ul>
+    </form>
+    <script>
+      function addItem() {
+        var item = document.getElementById("item").value;
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(item));
+        document.getElementById("grocery-list").appendChild(li);
+      }
+      function sortList() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("grocery-list");
+        switching = true;
+        while (switching) {
+          switching = false;
+          b = list.getElementsByTagName("li");
+          for (i = 0; i < (b.length - 1); i++) {
+            shouldSwitch = false;
+            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            switching = true;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
