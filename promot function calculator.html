@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+
+    <script>
+      function calculator() {
+        var num1 = parseFloat(prompt("Enter the first number: "));
+        var num2 = parseFloat(prompt("Enter the second number: "));
+        var operation = prompt("Enter the operation you want to perform (+, -, *, /): ");
+
+        switch (operation) {
+          case "+":
+            var result = num1 + num2;
+            alert("The result is: " + result);
+            break;
+          case "-":
+            var result = num1 - num2;
+            alert("The result is: " + result);
+            break;
+          case "*":
+            var result = num1 * num2;
+            alert("The result is: " + result);
+            break;
+          case "/":
+            var result = num1 / num2;
+            alert("The result is: " + result);
+            break;
+          default:
+            alert("Invalid operation.");
+            break;
+        }
+      }
+    </script>
+
+    <button onclick="calculator()">Calculate</button>
+  </body>
+</html>
