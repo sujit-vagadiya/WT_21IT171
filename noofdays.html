@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <label for="date1">Enter first date:</label>
+    <input type="date" id="date1"></input>
+    <label for="date2">Enter second date:</label>
+    <input type="date" id="date2"></input>
+    <button onclick="calculateDays()">Calculate Days</button>
+    <div id="output"></div>
+
+    <script>
+      function calculateDays() {
+        var date1 = new Date(document.getElementById("date1").value);
+        var date2 = new Date(document.getElementById("date2").value);
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+        document.getElementById("output").innerHTML = diffDays + " Days";
+      }
+    </script>
+  </body>
+</html>

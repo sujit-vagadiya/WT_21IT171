@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="number" id="num"></input>
+    <button onclick="printPrimes()">Print Primes</button>
+    <div id="output"></div>
+    
+    <script>
+      function printPrimes() {
+        var num = document.getElementById("num").value;
+        var primes = "";
+        for (var i = 2; i <= num; i++) {
+          var isPrime = true;
+          for (var j = 2; j < i; j++) {
+            if (i % j == 0) {
+              isPrime = false;
+              break;
+            }
+          }
+          if (isPrime) {
+            primes += i + " ";
+          }
+        }
+        document.getElementById("output").innerHTML = primes;
+      }
+    </script>
+  </body>
+</html>
