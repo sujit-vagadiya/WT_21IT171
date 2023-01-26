@@ -1,0 +1,96 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="javascript:display('bike')">bike</a>
+    <a href="javascript:display('car')">car</a>
+    
+    <table id="myTable"></table>
+    <p id="myTable"></p>
+    <script>
+        const bike={
+    bikename:"Ninja",
+    price:12300,
+    company:"patel",
+}
+let car={
+    carname:"BMW",
+    price:1300000,
+    company:"Rokad",
+}
+
+const eledisplay=document.getElementById("myTable");
+
+function display(obj)
+{
+
+   // alert(obj);
+
+ const tableEle=document.createElement("table");
+ const tableEleTR1=document.createElement("tr");
+
+ const tableEleTd1=document.createElement("td");
+ const tableEleTd2=document.createElement("td");
+ const tableEleTd3=document.createElement("td");
+ if(obj=="bike")
+ {
+    //alert(bike.bikename)
+    tableEleTd1.textContent=bike.bikename;
+    tableEleTd2.textContent=bike.price;
+    tableEleTd3.textContent=bike.company;
+ }
+ else if(obj=="car")
+ {
+    //alert(bike.bikename)
+    tableEleTd1.textContent=car.carname;
+    tableEleTd2.textContent=car.price;
+    tableEleTd3.textContent=car.company;
+ }
+
+ tableEleTR1.appendChild(tableEleTd1);
+ tableEleTR1.appendChild(tableEleTd2);
+ 
+ tableEle.appendChild(tableEleTR1);
+document.getElementById("myTable").appendChild(tableEle);
+return false;    
+}
+    </script>
+        
+</body>
+</html>
+
+
+
+
+<html>
+  <head>
+    <title>Bike and Car Information</title>
+  <body>
+</head>
+  <body>
+    <h1>Bike and Car Information</h1>
+    <div>
+      <img src="bike.jpg" onclick="displayInfo('Bike', '$1000', 'Honda')">
+      <img src="car.jpg" onclick="displayInfo('Car', '$20000', 'Toyota')">
+      <img src="plane.jpg" onclick="displayInfo('plane', '$3000', 'airplane')">
+    </div>
+    <div id="info"></div>
+    <script>
+      function displayInfo(name, price, company) {
+        document.getElementById('info').innerHTML = 
+          'Name: ' + name + '<br>' +
+          'Price: ' + price + '<br>' +
+          'Company: ' + company;
+      }
+    </script>
+  </body>
+</html>
