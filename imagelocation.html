@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <img id="image" src="your-image-source.jpg" alt="Image" style="position: absolute;">
+
+    <script>
+      document.addEventListener("keydown", moveImage);
+      
+      var image = document.getElementById("image");
+      var x = 0;
+      var y = 0;
+      
+      function moveImage(event) {
+        switch (event.keyCode) {
+          case 37:
+            x -= 10;
+            break;
+          case 38:
+            y -= 10;
+            break;
+          case 39:
+            x += 10;
+            break;
+          case 40:
+            y += 10;
+            break;
+        }
+        image.style.left = x + "px";
+        image.style.top = y + "px";
+      }
+    </script>
+  </body>
+</html>
