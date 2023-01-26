@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike information</title>
+</head>
+<body>
+    <script>
+class Bike {
+    constructor(type, avgspeed) {
+        this.type = type;
+        this.avgspeed = avgspeed;
+        document.write(`<br> Type :- ${type}<br> Average-Speed:- ${avgspeed} in bike`);
+    }
+    displayBike(){
+        document.write(`<br> Inside bike class`);   
+    }
+}
+class Electric extends Bike {
+    constructor(price, model) {
+        super(price, model);
+        this.price = price;
+        this.model = model;
+        document.write(`<br> Price :- ${this.price}<br> Model :- ${this.model} in Electric`);
+    }
+    displayEle(){
+        document.write(`<br> Inside Electric class`);   
+    }
+}
+let r = new Electric(200000,"2000EC");
+
+r.displayEle();
+r.displayBike();
+
+    </script> 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+</head>
+<body>
+    <table id="student-table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+        </tr>
+    </table>
+
+    <script>
+        class Student {
+            constructor(name, age, grade) {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            getAge() {
+                return this.age;
+            }
+
+            getGrade() {
+                return this.grade;
+            }
+        }
+
+        let student1 = new Student("sujit", 18, "A");
+        let student2 = new Student("nishit", 17, "B");
+        let student3 = new Student("bhargav", 18, "C");
+
+        let studentTable = document.getElementById("student-table");
+
+        let row1 = studentTable.insertRow();
+        let nameCell1 = row1.insertCell();
+        let ageCell1 = row1.insertCell();
+        let gradeCell1 = row1.insertCell();
+        nameCell1.innerHTML = student1.getName();
+        ageCell1.innerHTML = student1.getAge();
+        gradeCell1.innerHTML = student1.getGrade();
+
+        let row2 = studentTable.insertRow();
+        let nameCell2 = row2.insertCell();
+        let ageCell2 = row2.insertCell();
+        let gradeCell2 = row2.insertCell();
+        nameCell2.innerHTML = student2.getName();
+        ageCell2.innerHTML = student2.getAge();
+        gradeCell2.innerHTML = student2.getGrade();
+
+        let row3 = studentTable.insertRow();
+        let nameCell3 = row3.insertCell();
+        let ageCell3 = row3.insertCell();
+        let gradeCell3 = row3.insertCell();
+        nameCell3.innerHTML = student3.getName();
+        ageCell3.innerHTML = student3.getAge();
+        gradeCell3.innerHTML = student3.getGrade();
+    </script>
+</body>
+</html>
