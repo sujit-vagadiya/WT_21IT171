@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        class person{
+    constructor(name,year,area){
+        this.name=name;
+        this.year=year;
+        this.area=area;
+        try{
+    
+            if(this.year>150)
+            {
+                 throw new Error("age is invalid");
+            }
+        }
+        catch(e)
+        {
+            console.log(`error name is ${e.name} Error message is ${e.message}`);
+        }
+    }
+    
+    display()
+    {
+       return 'name of the person is '+this.name+'<br>year is '+this.year +'<br>lives in '+this.area;
+    }
+}
+class student extends person{
+    constructor(name,year,area,id,marks)
+    {
+        super(name,year,area);
+        this.id=id;
+        this.marks=marks;
+    }
+    show(){
+
+        return this.display()+'<br>has id '+this.id+'<br>marks is '+this.marks+' marks ';
+    }
+
+}
+let sujit=new student("SUJIT",2003,"RAJKOT","21IT171",47);
+document.getElementById("demo").innerHTML=sujit.show();
+    </script>
+    
+    <p id="va"></p>
+    
+    
+</body>
+</html>
