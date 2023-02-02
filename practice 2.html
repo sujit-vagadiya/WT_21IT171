@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <form>
+        <input type="checkbox" id="myCheck" onmouseover="show()">
+      </form>
+      <div id="person-info"></div>
+    <script>
+        const person = {
+  name: "vagadiya sujit",
+  age: 18,
+  address: {
+      street: "gokul chowk",
+      city: "rajkot",
+      state: "gujarat",
+      zip: "360035"
+  },
+  hobbies: ["reading", "listening music"]
+};
+
+const displayPersonInfo = ({name, age, address: {street, city, state}, hobbies}) => {
+    document.getElementById("person-info").innerHTML = `
+      <p>Name: ${name}</p>
+      <p>Age: ${age}</p>
+      <p>Address: ${street}, ${city}, ${state}</p>
+      <p>Hobbies: ${hobbies.join(", ")}</p>
+  `;
+}
+
+displayPersonInfo(person);
+
+    </script> 
+      
+      <p id="va"></p>
+</body>
+</html>
+
+
