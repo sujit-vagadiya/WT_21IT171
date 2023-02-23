@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration form</title>
+</head>
+<body>
+    <h1> student Registration form</h1>
+    <form name="stform" action="https://www.google.com/php" method="post">
+     FirstName:
+     <input type="text" id="fname" placeholder="First name">
+     <p id="p1"></p>
+     LastName:
+     <input type="text" id="lname" placeholder="Last Name">
+     <p id="p2"></p>
+     Password:
+     <input type="password" id="pass">
+     <p id="p3"></p>
+     <input type="button" value="signup" onclick="myfun()"></button>
+    </form>
+    <h2>University Subject</h2>
+    <form name="stform" action="https://www.google.com/php" method="post"> -->
+ WT:
+    <input type="checkbox" id="subjects[]"><br/>
+    <p id="p4"></p>
+    DSA:
+    <input type="checkbox" id="subjects[]"><br/>
+    COM:
+    <input type="checkbox" id="subjects[]"><br/>
+    MATHS:
+    <input type="checkbox" id="subjects[]"><br/>
+    <input type="button" value="submit" onclick="myfun()"></button>
+   
+
+    </form> 
+
+    <script>
+        function myfun(){
+    let bool1=true;
+    let fn=document.getElementById("fname").value;  
+    let ln=document.getElementById("lname").value;
+    let l=document.getElementById("pass").value;
+    let check1=document.getElementById("vehicle1").checked;
+    let check2=document.getElementById("vehicle2").checked;     
+    if(fn.length==0)
+    {
+        document.getElementById("p1").textContent="Enter valid first name";
+        bool1=false;
+    }
+    if(  ln.length==0)
+    {
+        document.getElementById("p2").textContent="Enter valid last name";
+        bool1=false;
+    }
+    
+    
+    if(l.length<=7)
+    {
+        document.getElementById("p3").textContent="Enter valid password";
+        bool1=false;
+    }
+    if(check1=true && check2=true)
+   {
+     document.getElementById("p4").textContent="Enter valid checkbox";
+     bool1=false;
+   }
+    
+    if(bool1)
+    {
+        document.stform.submit();
+    }
+    
+}
+    </script>
+</body>
+</html>

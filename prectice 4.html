@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Spread Operator Example</title>
+  </head>
+  <body>
+    <script>
+      
+      function car(make, model, year, ...features) {
+        
+        const newCar = {
+          make: make,
+          model: model,
+          year: year,
+          features: [...features]
+        };
+ return newCar;
+      }
+const myCar = car('Ford', 'Mustang', 2022, 'Leather Seats', 'Sunroof', 'Backup Camera');
+     console.log('My car:', myCar);
+    </script>
+  </body>
+</html> -->
+<!-- <!DOCTYPE HTML>  
+<head>  
+<tittle>  spread operator
+</tittle>  
+</head>  
+<html>  <script>  const myVehicle = {  brand: 'Ford',  model: 'Mustang',  color: 'red'  
+}  
+ updateMyVehicle = {  
+type: 'car',  year: 2021  
+}  
+const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle} 
+ vehicle,(myUpdatedVehicle);  
+function vehicle({type, color, brand, model}) {  const message = 'My ' + type + ' is a ' + color + ' coloured ' + brand + ' ' + model + '.';  console.log(message);  
+}  
+</script>  
+</body>  
+</html>  -->
+<!DOCTYPE html>  
+<html>  
+<title>Document</title> 
+<body>  <script>  function sum(...args) {  let sum = 0;  for (let arg of args) sum += arg;  return sum;  }  let x = sum(10, 20, 30, 40, 50, 60, 70, 80);  console.log(x);  </script>  
+</body>  
+</html> 

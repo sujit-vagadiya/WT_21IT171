@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration form</title>
+</head>
+<body>
+    <h1> student Registration form</h1>
+    <form name="stform" action="https://www.google.com/php" method="post">
+     FirstName:
+     <input type="text" id="fname" placeholder="First name">
+     <p id="p1"></p>
+     LastName:
+     <input type="text" id="lname" placeholder="Last Name">
+     <p id="p2"></p>
+     Password:
+     <input type="password" id="pass">
+     <p id="p3"></p>
+     <input type="button" value="signup" onclick="myfun()"></button>
+   </form>
+
+    <script>
+        function myfun(){
+    let bool1=true;
+    let fn=document.getElementById("fname").value;  
+    let ln=document.getElementById("lname").value;
+    let l=document.getElementById("pass").value;
+         
+    if(fn.length==0)
+    {
+        document.getElementById("p1").textContent="Enter valid first name";
+        bool1=false;
+    }
+    if(  ln.length==0)
+    {
+        document.getElementById("p2").textContent="Enter valid last name";
+        bool1=false;
+    }
+    
+    
+    if(l.length<=7)
+    {
+        document.getElementById("p3").textContent="Enter valid password";
+        bool1=false;
+    }
+
+    if(bool1)
+    {
+        document.stform.submit();
+    }
+    
+}
+    </script>
+</body>
+</html>
