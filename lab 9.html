@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Person Details</title>
+</head>
+<body>
+  <h1>Person Details</h1>
+  <ul id="person-details"></ul>
+  
+  <script>
+    const personDetails = [
+      { name: 'sujit', age: 19, occupation: 'Software Engineer' },
+      { name: 'nishit', age: 20, occupation: 'Data Scientist' },
+      { name: 'bhargav', age: 18, occupation: 'Web Developer' }
+    ];
+    
+    const personDetailsList = document.getElementById('person-details');
+    
+    personDetails.forEach((person) => {
+      const li = document.createElement('li');
+      li.textContent = `${person.name}, ${person.age}, ${person.occupation}`;
+      personDetailsList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
